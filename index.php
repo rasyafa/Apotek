@@ -16,6 +16,9 @@
     <!-- header -->
     <header>
         <div class="container">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="logo">
+        </div>
         <h1><a href="index.php">MEDICINE PHARMACY</a></h1>
         <ul>
             <li><a href="galeri.php">Katalog</a></li>
