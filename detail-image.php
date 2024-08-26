@@ -9,63 +9,74 @@
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Apotek</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Apotek</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
 
-<body>
-    <!-- header -->
-    <header>
-        <div class="container">
-        <h1><a href="index.php">MEDICINE PHARMACY</a></h1>
-        <ul>
-            <li><a href="galeri.php">Katalog</a></li>
-           <li><a href="registrasi.php">Registrasi</a></li>
-           <li><a href="login.php">Login</a></li>
-        </ul>
+    <body>
+        <!-- header -->
+        <header>
+            <div class="container">
+            <h1><a href="index.php">MEDICINE PHARMACY</a></h1>
+            <ul>
+                <li><a href="galeri.php">Katalog</a></li>
+            <li><a href="registrasi.php">Registrasi</a></li>
+            <li><a href="login.php">Login</a></li>
+            </ul>
+            </div>
+        </header>
+        
+        <!-- search -->
+        <!-- Bagian pencarian foto -->
+        <div class="search">
+            <div class="container">
+                <!-- Formulir pencarian -->
+                <form action="galeri.php">
+                    <!-- Input untuk mengetikkan kata kunci pencarian -->
+                    <input type="text" name="search" placeholder="Cari Foto" value="<?php echo $_GET['search'] ?>" />
+                    <!-- Input tersembunyi untuk menyimpan kategori saat ini -->
+                    <input type="hidden" name="kat" value="<?php echo $_GET['kat'] ?>" />
+                    <!-- Tombol untuk mengirimkan pencarian -->
+                    <input type="submit" name="cari" value="Cari Foto" />
+                </form>
+            </div>
         </div>
-    </header>
-    
-    <!-- search -->
-    <div class="search">
-        <div class="container">
-            <form action="galeri.php">
-                <input type="text" name="search" placeholder="Cari Foto" value="<?php echo $_GET['search'] ?>" />
-                <input type="hidden" name="kat" value="<?php echo $_GET['kat'] ?>" />
-                <input type="submit" name="cari" value="Cari Foto" />
-            </form>
-        </div>
-    </div>
-    
-    <!-- product detail -->
-    <div class="section">
-        <div class="container">
-             <h3>Detail Obat</h3>
-            <div class="box">
-                <div class="col-2">
-                   <img src="foto/<?php echo $p->image ?>" width="100%" /> 
-                </div>
-                <div class="col-2">
-                   <h3><?php echo $p->image_name ?><br />Katalog : <?php echo $p->category_name  ?></h3>
-                   <h4>Nama User : <?php echo $p->admin_name ?><br />
-                   Upload Pada Tanggal : <?php echo $p->date_created  ?></h4>
-                   <p>Deskripsi :<br />
-                        <?php echo $p->image_description ?>
-                   </p>
-                   
+
+        <!-- product detail -->
+        <!-- Bagian detail produk -->
+        <div class="section">
+            <div class="container">
+                <!-- Judul detail produk -->
+                <h3>Detail Obat</h3>
+                <div class="box">
+                    <div class="col-2">
+                        <!-- Gambar produk -->
+                        <img src="foto/<?php echo $p->image ?>" width="100%" /> 
+                    </div>
+                    <div class="col-2">
+                        <!-- Nama produk dan kategori -->
+                        <h3><?php echo $p->image_name ?><br />Katalog : <?php echo $p->category_name ?></h3>
+                        <!-- Nama pengguna yang mengupload dan tanggal upload -->
+                        <h4>Nama User : <?php echo $p->admin_name ?><br />
+                        Upload Pada Tanggal : <?php echo $p->date_created ?></h4>
+                        <!-- Deskripsi produk -->
+                        <p>Deskripsi :<br />
+                            <?php echo $p->image_description ?>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- footer -->
-    <footer>
-        <div class="container">
-            <small>Copyright &copy; 2024 - Medicine Pharmacy.</small>
-        </div>
-    </footer>
-</body>
+
+        
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <small>Copyright &copy; 2024 - Medicine Pharmacy.</small>
+            </div>
+        </footer>
+    </body>
 </html>

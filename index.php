@@ -46,22 +46,31 @@
             <h3>Katalog</h3>
             <div class="box">
                 <?php
+                    // Mengambil daftar kategori dari database
                     $kategori = mysqli_query($conn, "SELECT * FROM tb_category ORDER BY category_id DESC");
-					if(mysqli_num_rows($kategori) > 0){
-						while($k = mysqli_fetch_array($kategori)){
-				?>
+                    
+                    // Memeriksa apakah ada kategori yang ditemukan
+                    if(mysqli_num_rows($kategori) > 0){
+                        // Loop untuk menampilkan setiap kategori
+                        while($k = mysqli_fetch_array($kategori)){
+                ?>
+                    <!-- Link ke halaman galeri berdasarkan kategori yang dipilih -->
                     <a href="galeri.php?kat=<?php echo $k['category_id'] ?>">
                         <div class="col-5">
+                            <!-- Menampilkan ikon untuk setiap kategori -->
                             <img src="img/icon.png" width="50px" style="margin-bottom:5px;" />
-                        <p><?php echo $k['category_name'] ?></p>
+                            <!-- Menampilkan nama kategori -->
+                            <p><?php echo $k['category_name'] ?></p>
                         </div>
                     </a>
-                <?php }}else{ ?>
-                     <p>Katalog tidak ada</p>
+                <?php }} else { ?>
+                    <!-- Pesan jika tidak ada kategori yang ditemukan -->
+                    <p>Katalog tidak ada</p>
                 <?php } ?>
             </div>
         </div>
     </div>
+
 
     
     <!-- footer -->
