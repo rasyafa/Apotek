@@ -16,6 +16,21 @@ a {
     text-decoration: none;
 }
 
+header img {
+    max-width: 80px;
+    justify-content: left;
+    align-items: center;
+}
+
+.header a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
 #bg-login {
     display: flex;
     height: 100vh;

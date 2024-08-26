@@ -16,15 +16,17 @@
     <!-- header -->
     <header>
         <div class="container">
-        <div class="logo">
-            <img src="img/logo.jpg" alt="logo">
-        </div>
+       <div class="header">
+                <a href="css/style.css">
+                <img src="img/logo.jpg" alt="logo">
+                </a>
         <h1><a href="index.php">MEDICINE PHARMACY</a></h1>
         <ul>
             <li><a href="galeri.php">Katalog</a></li>
            <li><a href="registrasi.php">Registrasi</a></li>
            <li><a href="login.php">Login</a></li>
         </ul>
+        </div>
         </div>
     </header>
     
