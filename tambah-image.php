@@ -137,8 +137,8 @@
                                         '".$deskripsi."',
                                         '".$newname."',
                                         '".$status."',
-                                        null
-                                            ) ");
+                                        NOW()
+                                            ) "); //Kode NOW() berfungsi untuk mengisi data_created dengan waktu saat ini
                                 // Mengecek apakah proses penyimpanan data ke database berhasil atau tidak			   
                             if($insert){
                                 // Jika berhasil, tampilkan pesan sukses kepada pengguna
